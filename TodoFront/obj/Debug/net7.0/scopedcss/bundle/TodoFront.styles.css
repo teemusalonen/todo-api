@@ -47,3 +47,14 @@ button.accept-policy[b-iojwt7klt4] {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.asd[b-iojwt7klt4] {
+  border: solid 1px red;
+}
+/* _content/TodoFront/Views/Todo/Index.cshtml.rz.scp.css */
+.asd[b-uiwh1l8kne] {
+    border: solid 1px #555555;
+    width: max-content;
+    padding: 10px;
+    border-radius: 12px;
+}

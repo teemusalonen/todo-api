@@ -44,10 +44,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kby9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/teemu/Documents/Kvanttori/todo-api/TodoFront/Views/Todo/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kby9JbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [/home/teemu/Documents/Kvanttori/todo-api/TodoFront/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -59,3 +55,7 @@ build_metadata.AdditionalFiles.CssScope =
 [/home/teemu/Documents/Kvanttori/todo-api/TodoFront/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-iojwt7klt4
+
+[/home/teemu/Documents/Kvanttori/todo-api/TodoFront/Views/Todo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kby9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-uiwh1l8kne

@@ -22,23 +22,20 @@ namespace TodoFront.Controllers
         // GET: Todo
         public async Task<IActionResult> Index()
         {
-              return _context.TodoItem != null ? 
-                          View(await _context.TodoItem.ToListAsync()) :
-                          Problem("Entity set 'TodoContext.TodoItem'  is null.");
+              return _context.TodoItem != null 
+                ? View(await _context.TodoItem.ToListAsync()) 
+                : Problem("TODO-kohtia ei löytynyt");
         }
 
         // GET: Todo/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.TodoItem == null)
-            {
+        public async Task<IActionResult> Details(int? id) {
+            if (id == null || _context.TodoItem == null) {
                 return NotFound();
             }
 
-            var todoItem = await _context.TodoItem
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (todoItem == null)
-            {
+            var todoItem = await _context.TodoItem.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (todoItem == null) {
                 return NotFound();
             }
 
@@ -56,10 +53,8 @@ namespace TodoFront.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,isCompleted")] TodoItem todoItem)
-        {
-            if (ModelState.IsValid)
-            {
+        public async Task<IActionResult> Create([Bind("Id,Name,isCompleted")] TodoItem todoItem) {
+            if (ModelState.IsValid) {
                 _context.Add(todoItem);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -68,16 +63,13 @@ namespace TodoFront.Controllers
         }
 
         // GET: Todo/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.TodoItem == null)
-            {
+        public async Task<IActionResult> Edit(int? id) {
+            if (id == null || _context.TodoItem == null) {
                 return NotFound();
             }
 
             var todoItem = await _context.TodoItem.FindAsync(id);
-            if (todoItem == null)
-            {
+            if (todoItem == null) {
                 return NotFound();
             }
             return View(todoItem);
@@ -88,28 +80,19 @@ namespace TodoFront.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,isCompleted")] TodoItem todoItem)
-        {
-            if (id != todoItem.Id)
-            {
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,isCompleted")] TodoItem todoItem) {
+            if (id != todoItem.Id) {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
+            if (ModelState.IsValid) {
+                try {
                     _context.Update(todoItem);
                     await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TodoItemExists(todoItem.Id))
-                    {
+                } catch (DbUpdateConcurrencyException) {
+                    if (!TodoItemExists(todoItem.Id)) {
                         return NotFound();
-                    }
-                    else
-                    {
+                    } else {
                         throw;
                     }
                 }
@@ -119,17 +102,14 @@ namespace TodoFront.Controllers
         }
 
         // GET: Todo/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.TodoItem == null)
-            {
+        public async Task<IActionResult> Delete(int? id) {
+            if (id == null || _context.TodoItem == null) {
                 return NotFound();
             }
 
             var todoItem = await _context.TodoItem
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (todoItem == null)
-            {
+            if (todoItem == null) {
                 return NotFound();
             }
 
