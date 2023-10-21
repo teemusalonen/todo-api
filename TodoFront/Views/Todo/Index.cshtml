@@ -4,19 +4,21 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Täs sun TODO-kohdat</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Tee uus?</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @* @Html.DisplayNameFor(model => model.Name) *@
+                Nimi
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.isCompleted)
+                @* @Html.DisplayNameFor(model => model.isCompleted) *@
+                Suoritettu?
             </th>
             <th></th>
         </tr>
@@ -31,9 +33,9 @@
                 @Html.DisplayFor(modelItem => item.isCompleted)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Muakkaa</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Avaa</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Poista</a>
             </td>
         </tr>
 }
